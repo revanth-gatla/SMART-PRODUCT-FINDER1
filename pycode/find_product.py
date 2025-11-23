@@ -9,8 +9,9 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 import base64
 
-with open("background.png", "rb") as f:
+with open("pycode/background.png", "rb") as f:
     encoded = base64.b64encode(f.read()).decode()
+    
 
 st.markdown(
     f"""
@@ -246,3 +247,4 @@ def check_scrapingbee_status():
             return {'status': 'error', 'message': f"API Error: {response.status_code}"}
     except Exception as e:
         return {'status': 'error', 'message': str(e)}
+
