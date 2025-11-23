@@ -180,17 +180,17 @@ def format_ranking(df):
 # ---------------------------- BUTTONS (HORIZONTAL) ----------------------------
 with st.sidebar:
 
-    if st.button("➕ Add URL", use_container_width=True):
+    if st.button("➕ Add URL", width='stretch'):
         add_text_input()
 
     st.write("")  # spacer
 
-    if st.button("🔁 Rerun", use_container_width=True):
+    if st.button("🔁 Rerun", width='stretch'):
         generate()
 
     st.write("")  # spacer
 
-    if st.button("🚀 Compare", use_container_width=True):
+    if st.button("🚀 Compare", width='stretch'):
         generate()
 #---><---------
 # ---------------------------- DISPLAY OUTPUT ----------------------------
@@ -221,7 +221,7 @@ with tab1:
     st.subheader("Quick Summary")
     # Pie/Bar charts
     for fig in st.session_state.figure:
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
 
 with tab2:
     st.subheader("Comparison Table")
@@ -236,13 +236,14 @@ with tab3:
     for header, content in st.session_state.content:
         if not ("Ranking" in header or "Best Specifications" in header):
             with st.expander(header):
-                st.dataframe(content, use_container_width=True)
+                st.dataframe(content, width='stretch')
     for header, content in st.session_state.content:
         if "Best Specifications" in header:
             with st.expander(header):
-                st.dataframe(content, use_container_width=True)
+                st.dataframe(content, width='stretch')
 
 # Clear session state
 st.session_state.content.clear()
 st.session_state.figure.clear()
+
 
