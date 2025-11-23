@@ -32,7 +32,7 @@ def scrape_with_scrapingbee(url):
     """Use ScrapingBee API for reliable scraping"""
     try:
         # Get API key from Streamlit secrets
-        api_key = ""
+        api_key = st.secrets["keys"]["scrappingbee"]
         
         response = requests.get(
             url='https://app.scrapingbee.com/api/v1/',
@@ -51,7 +51,7 @@ def scrape_with_scrapingbee(url):
         if response.status_code == 200:
             return response.text
         else:
-            api_key1 = ""
+            api_key1 = st.secrets["keys"]["scrappingbee"]
         
             response1 = requests.get(
             url='https://app.scrapingbee.com/api/v1/',
@@ -231,7 +231,7 @@ def check_scrapingbee_status():
     """Check ScrapingBee API status and remaining credits"""
     try:
         import os
-        api_key = ""
+        api_key = st.secrets["keys"]["scrappingbee"]
         response = requests.get(
             'https://app.scrapingbee.com/api/v1/usage',
             params={'api_key': api_key}
@@ -247,4 +247,5 @@ def check_scrapingbee_status():
             return {'status': 'error', 'message': f"API Error: {response.status_code}"}
     except Exception as e:
         return {'status': 'error', 'message': str(e)}
+
 
