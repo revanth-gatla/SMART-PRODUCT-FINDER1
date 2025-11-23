@@ -14,7 +14,7 @@ import streamlit as st
 from groq import Groq
 
 def get(prompt):
-    client = Groq(api_key="")
+    client = Groq(api_key=st.secrets["keys"]["groqapi"])
     response = client.chat.completions.create(
     model="llama-3.1-8b-instant",
     messages=[
@@ -23,4 +23,5 @@ def get(prompt):
     stream=False
     )
     return response.choices[0].message.content.strip()
+
 
