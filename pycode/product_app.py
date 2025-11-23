@@ -192,9 +192,9 @@ with st.sidebar:
 
     if st.button("🚀 Compare", width='stretch'):
         generate()
-#---><---------
+
 # ---------------------------- DISPLAY OUTPUT ----------------------------
- # --------- METRICS (RIGHT AFTER HEADER, BEFORE TABS) ----------
+# --------- METRICS (RIGHT AFTER HEADER, BEFORE TABS) ----------
 # Calculate these based on your real data -- placeholder logic here:
 if st.session_state.content:
     top_rating = 0
@@ -216,7 +216,6 @@ if st.session_state.content:
 tab1, tab2, tab3 = st.tabs(["Overview", "Compare Table", "Details"])
 
 
-
 with tab1:
     st.subheader("Quick Summary")
     # Pie/Bar charts
@@ -236,14 +235,14 @@ with tab3:
     for header, content in st.session_state.content:
         if not ("Ranking" in header or "Best Specifications" in header):
             with st.expander(header):
+                content = content.astype(str)  # <--- modification
                 st.dataframe(content, width='stretch')
     for header, content in st.session_state.content:
         if "Best Specifications" in header:
             with st.expander(header):
+                content = content.astype(str)  # <--- modification
                 st.dataframe(content, width='stretch')
 
 # Clear session state
 st.session_state.content.clear()
 st.session_state.figure.clear()
-
-
