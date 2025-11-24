@@ -220,7 +220,7 @@ with tab1:
     st.subheader("Quick Summary")
     # Pie/Bar charts
     for fig in st.session_state.figure:
-        st.plotly_chart(fig, width='true')
+        st.plotly_chart(fig, width='stretch')
 
 with tab2:
     st.subheader("Comparison Table")
@@ -246,4 +246,5 @@ with tab3:
 # Clear session state
 st.session_state.content.clear()
 st.session_state.figure.clear()
+
 
