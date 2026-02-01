@@ -5,15 +5,10 @@
 ## Project Description
 
 Smart Product Finder is a Python-based web application built using **Streamlit** that helps users compare multiple Amazon products and identify the best option based on specifications and customer ratings.
-
 Users can paste multiple Amazon product URLs into the application. The system scrapes product details such as title, description, technical specifications, and ratings using the **ScrapingBee API** and **BeautifulSoup**.  
 It then analyzes and compares products using NLP techniques and ranks them based on similarity and ratings.
-
 The application also uses a **Large Language Model (LLM)** to extract the best overall specifications across all compared products.
-
 This project demonstrates real-world usage of **web scraping, data processing, NLP, and interactive web application development** using Python.
-
-
 
 ---
 
