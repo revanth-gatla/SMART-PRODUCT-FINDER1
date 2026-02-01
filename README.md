@@ -15,7 +15,7 @@ This project demonstrates real-world usage of **web scraping, data processing, N
 ## Live Demo
 
 🔗 **End-User Application Link**  
-https://comparision-guru.streamlit.app/
+https://comparison-guru.streamlit.app/
 
 *(Users can directly access and use the application through this link without setting up the project locally.)
 ---
